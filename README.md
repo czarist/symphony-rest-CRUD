@@ -37,7 +37,101 @@ http://localhost:8080
 
 ## API Documentation
 
-### 1. Create a Product
+### 1. Create a Category
+**Endpoint:**
+```
+POST /categories
+```
+**Request Body:**
+```json
+{
+    "name": "Electronics"
+}
+```
+**Response:**
+```json
+{
+    "id": 1,
+    "name": "Electronics"
+}
+```
+
+### 2. Get All Categories
+**Endpoint:**
+```
+GET /categories
+```
+**Response:**
+```json
+[
+    {
+        "id": 1,
+        "name": "Electronics"
+    },
+    {
+        "id": 2,
+        "name": "Books"
+    }
+]
+```
+
+### 3. Get a Single Category
+**Endpoint:**
+```
+GET /categories/{id}
+```
+**Response:**
+```json
+{
+    "id": 1,
+    "name": "Electronics"
+}
+```
+If the category does not exist:
+```json
+{
+    "error": "Category not found"
+}
+```
+
+### 4. Update a Category
+**Endpoint:**
+```
+PUT /categories/{id}
+```
+**Request Body:**
+```json
+{
+    "name": "Computers and Accessories"
+}
+```
+**Response:**
+```json
+{
+    "id": 1,
+    "name": "Computers and Accessories"
+}
+```
+
+### 5. Delete a Category
+**Endpoint:**
+```
+DELETE /categories/{id}
+```
+**Response:**
+```json
+{
+    "message": "Category deleted"
+}
+```
+If the category does not exist:
+```json
+{
+    "error": "Category not found"
+}
+```
+
+### 6. Create a Product
 **Endpoint:**
 ```
 POST /products
@@ -65,7 +159,7 @@ POST /products
 }
 ```
 
-### 2. Get All Products
+### 7. Get All Products
 **Endpoint:**
 ```
 GET /products
@@ -96,7 +190,7 @@ GET /products
 ]
 ```
 
-### 3. Get a Single Product
+### 8. Get a Single Product
 **Endpoint:**
 ```
 GET /products/{id}
@@ -121,7 +215,7 @@ If the product does not exist:
 }
 ```
 
-### 4. Update a Product
+### 9. Update a Product
 **Endpoint:**
 ```
 PUT /products/{id}
@@ -148,7 +242,7 @@ PUT /products/{id}
 }
 ```
 
-### 5. Delete a Product
+### 10. Delete a Product
 **Endpoint:**
 ```
 DELETE /products/{id}
@@ -163,100 +257,6 @@ If the product does not exist:
 ```json
 {
     "error": "Product not found"
-}
-```
-
-### 6. Create a Category
-**Endpoint:**
-```
-POST /categories
-```
-**Request Body:**
-```json
-{
-    "name": "Electronics"
-}
-```
-**Response:**
-```json
-{
-    "id": 1,
-    "name": "Electronics"
-}
-```
-
-### 7. Get All Categories
-**Endpoint:**
-```
-GET /categories
-```
-**Response:**
-```json
-[
-    {
-        "id": 1,
-        "name": "Electronics"
-    },
-    {
-        "id": 2,
-        "name": "Books"
-    }
-]
-```
-
-### 8. Get a Single Category
-**Endpoint:**
-```
-GET /categories/{id}
-```
-**Response:**
-```json
-{
-    "id": 1,
-    "name": "Electronics"
-}
-```
-If the category does not exist:
-```json
-{
-    "error": "Category not found"
-}
-```
-
-### 9. Update a Category
-**Endpoint:**
-```
-PUT /categories/{id}
-```
-**Request Body:**
-```json
-{
-    "name": "Computers and Accessories"
-}
-```
-**Response:**
-```json
-{
-    "id": 1,
-    "name": "Computers and Accessories"
-}
-```
-
-### 10. Delete a Category
-**Endpoint:**
-```
-DELETE /categories/{id}
-```
-**Response:**
-```json
-{
-    "message": "Category deleted"
-}
-```
-If the category does not exist:
-```json
-{
-    "error": "Category not found"
 }
 ```
 
