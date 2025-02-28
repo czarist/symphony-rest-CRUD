@@ -22,18 +22,21 @@ class Product
     private string $status;
 
     #[ORM\ManyToOne(targetEntity: ProductCategory::class)]
-    #[ORM\JoinColumn(nullable: true, onDelete: "SET NULL")]
+    #[ORM\JoinColumn(name: "category_id", referencedColumnName: "id", nullable: true, onDelete: "SET NULL")]
     private ?ProductCategory $category = null;
 
     public function getId(): ?int
     {return $this->id;}
+
     public function getName(): string
     {return $this->name;}
+
     public function setName(string $name): void
     {$this->name = $name;}
 
     public function getPrice(): float
     {return $this->price;}
+
     public function setPrice(float $price): void
     {$this->price = $price;}
 
@@ -49,6 +52,7 @@ class Product
 
     public function getCategory(): ?ProductCategory
     {return $this->category;}
+
     public function setCategory(?ProductCategory $category): void
     {$this->category = $category;}
 }
